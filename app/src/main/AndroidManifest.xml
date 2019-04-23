@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".detail_notes.DetailNotesActivity" />
+        <activity android:name=".detail_notes.DetailNotesActivity"></activity>
         <activity android:name=".create_notes.CreateNotesActivity"></activity>
     </application>
 

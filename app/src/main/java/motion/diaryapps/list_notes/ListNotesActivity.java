@@ -38,8 +38,9 @@ public class ListNotesActivity extends AppCompatActivity {
         initToolbar();
 
         // TODO: 4/12/19 panggil initRecyclerView() disini
-
+        initRecyclerView();
         // TODO: 4/12/19 panggil initDummy() disini
+        initDummy();
     }
 
     /**
@@ -57,13 +58,13 @@ public class ListNotesActivity extends AppCompatActivity {
     public void initRecyclerView() {
         // TODO: 4/12/19 -> ganti null dengan component RecyclerView pada activity_list_notes
         // hint: gunakan findViewById(R.id.xxxxx);
-        mRecyclerView = null;
+        mRecyclerView = findViewById(R.id.rvListNotes);
 
         // TODO: 4/12/19 -> ganti null dengan objek ListNotesAdapter
-        mAdapter = null;
+        mAdapter = new ListNotesAdapter(mLists,this);
 
         // TODO: 4/12/19 -> ganti null dengan objek LinearLayoutManager
-        mLayoutManager = null;
+        mLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
 
 
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -78,8 +79,9 @@ public class ListNotesActivity extends AppCompatActivity {
         // hint: lakukan setelah menambahkan constructor pada ListNotesModel
         // untuk date gunakan Tools.getCurrentDateISO8601()
 
-        mLists.add(new ListNotesModel());
-
+        mLists.add(new ListNotesModel("1","https://t-ec.bstatic.com/images/hotel/max1024x768/136/136201154.jpg","Paradise Lost",Tools.getCurrentDateISO8601()));
+        mLists.add(new ListNotesModel("2","https://t-ec.bstatic.com/images/hotel/max1024x768/136/136201154.jpg","Paradise Lost",Tools.getCurrentDateISO8601()));
+        mLists.add(new ListNotesModel("3","https://t-ec.bstatic.com/images/hotel/max1024x768/136/136201154.jpg","Paradise Lost",Tools.getCurrentDateISO8601()));
         mAdapter.notifyDataSetChanged();
     }
 
